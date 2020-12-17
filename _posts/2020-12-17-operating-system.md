@@ -30,13 +30,13 @@ categories: OS 운영체제 가상메모리 페이징
       - 예를 들어, 프로세스에 4GB를 할당하나 실제 물리 메모리에 올라가는 것은 그것보다 작음
     - 프로세스간 공간 분리로 프로세스 이슈가 전체 시스템에 영향 주지 않음
 - 특징
-  - ![image-20201217005631783](D:\Projects\Study\brrkim.github.io\images\image-20201217005631783.png)
+  - ![image-20201217005631783](..\images\image-20201217005631783.png)
   - 프로세스는 가상 주소를 사용하고, 실제 해당 주소에서 데이터를 읽고 쓸때만 물리 주소로 바꿔주면 된다
     - virtual address (가상 주소): 프로세스가 참조하는 주소
     - physical address (물리 주소): 실제 메모리 주소
     - 가상주소를 물리주소로 변환시켜주는 메커니즘이 들어있음
       - MMU(Memory Management Unit) 이라는 하드웨어 장치가 수행
-      - ![image-20201217010331902](D:\Projects\Study\brrkim.github.io\images\image-20201217010331902.png)
+      - ![image-20201217010331902](..\images\image-20201217010331902.png)
 
 ### 1.5.2 페이징 시스템
 
@@ -53,7 +53,7 @@ categories: OS 운영체제 가상메모리 페이징
 
   - 프로세스(4GB)의 PCB(process control block)에 Page Table 구조체를 가리키는 주소 있음
   - Page Table에는 가상 주소와 물리 주소간 매핑 정보 있음
-  - ![image-20201217011032780](D:\Projects\Study\brrkim.github.io\images\image-20201217011032780.png)
+  - ![image-20201217011032780](..\images\image-20201217011032780.png)
 
 - 구조
 
@@ -68,7 +68,7 @@ categories: OS 운영체제 가상메모리 페이징
 
   - 가상 페이지 번호 p가 Page Table에 물리주소 번호와 매핑이 되고, 이 물리주소 번호에 변위 d 만큼 더하면 실제 물리 메모리 주소가 되는 것임 
 
-  - ![image-20201217012158226](D:\Projects\Study\brrkim.github.io\images\image-20201217012158226.png)
+  - ![image-20201217012158226](..\images\image-20201217012158226.png)
 
 - Page Table
 
@@ -84,11 +84,11 @@ categories: OS 운영체제 가상메모리 페이징
 
       (정리) 프로세스 PCB에 page table의 base주소 가져오기 + 페이지번호를 가지고 Page Table에서 해당 Page로 들어갈 수 있음
 
-  - ![image-20201217013446466](D:\Projects\Study\brrkim.github.io\images\image-20201217013446466.png)
+  - ![image-20201217013446466](..\images\image-20201217013446466.png)
 
   - Page Table에는 valid-invalid bit 가 있어서 물리 주소에 데이터가 들어있는지 비어있는지도 알 수 있음
 
-  - ![image-20201217013634248](D:\Projects\Study\brrkim.github.io\images\image-20201217013634248.png)
+  - ![image-20201217013634248](..\images\image-20201217013634248.png)
 
 - 페이징 시스템과 MMU
 
